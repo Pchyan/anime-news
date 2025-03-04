@@ -11,7 +11,13 @@
     <ul>
         {% if news %}
             {% for item in news %}
-                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                <li>
+                    <a href="{{ item.link }}">{{ item.title }}</a> - {{ item.date }}
+                    <form action="/summarize" method="post" style="display:inline;">
+                        <input type="hidden" name="url" value="{{ item.link }}">
+                        <button type="submit">AI彙整</button>
+                    </form>
+                </li>
             {% endfor %}
         {% else %}
             <li>目前沒有消息可顯示。</li>
