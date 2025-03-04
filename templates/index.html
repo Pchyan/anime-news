@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動漫消息</title>
+</head>
+<body>
+    <h1>最新動漫消息</h1>
+    <ul>
+        {% if news %}
+            {% for item in news %}
+                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <li>目前沒有消息可顯示。</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
