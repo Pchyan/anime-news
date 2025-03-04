@@ -1,0 +1,39 @@
+準備您的應用程序
+
+1. 創建 requirements.txt 文件：
+在您的項目根目錄中創建一個 requirements.txt 文件，列出您的應用程序所需的所有依賴項。您可以使用以下命令自動生成此文件：
+   pip freeze > requirements.txt
+
+2. 創建 Procfile 文件：
+在您的項目根目錄中創建一個名為 Procfile 的文件，內容如下：
+   web: python app.py
+這告訴 Heroku 如何啟動您的應用程序。
+
+3. 確保您的應用程序可以在 Heroku 上運行：
+確保您的 Flask 應用程序在 app.py 中使用 app.run() 時，設置 host='0.0.0.0' 和 port=int(os.environ.get("PORT", 5000))，以便 Heroku 可以正確運行它。
+   if __name__ == '__main__':
+       app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
+
+部署到 Heroku
+
+1.安裝 Heroku CLI：
+如果您尚未安裝 Heroku CLI，請訪問 Heroku CLI 進行安裝。
+
+2.登錄到 Heroku：
+在終端中運行以下命令以登錄到您的 Heroku 帳戶：
+   heroku login
+
+3.創建 Heroku 應用：
+在終端中運行以下命令以創建新的 Heroku 應用：
+   heroku create your-app-name
+將 your-app-name 替換為您想要的應用名稱。
+
+4.推送代碼到 Heroku：
+使用 Git 將您的代碼推送到 Heroku：
+   git add .
+   git commit -m "Deploying to Heroku"
+   git push heroku master
+
+5.打開您的應用程序：
+部署完成後，您可以使用以下命令打開您的應用程序：
+   heroku open
