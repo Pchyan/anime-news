@@ -1,10 +1,9 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>動漫消息</title>
+    <title>Yahoo 日本重點新聞</title>
     <style>
         /* 簡單的樣式來美化頁籤 */
         nav {
@@ -26,13 +25,13 @@
 </head>
 <body>
     <nav>
-        <a href="/" class="active">最新動漫消息</a>
-        <a href="/yahoo-news">Yahoo 日本重點新聞</a>
+        <a href="/">最新動漫消息</a>
+        <a href="/yahoo-news" class="active">Yahoo 日本重點新聞</a>
         <a href="/taiwan-yahoo-news">台灣 Yahoo 即時新聞</a>
         <a href="/google-news">Google 頭條新聞</a>
     </nav>
     
-    <h1>最新動漫消息</h1>
+    <h1>Yahoo 日本重點新聞</h1>
     <ul>
         {% if news %}
             {% for item in news %}
@@ -48,5 +47,6 @@
             <li>目前沒有消息可顯示。</li>
         {% endif %}
     </ul>
+    <a href="/">返回首頁</a>
 </body>
-</html>
+</html> 

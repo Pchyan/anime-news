@@ -1,12 +1,45 @@
-<!-- templates/summary.html -->
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
+    <title>文章彙整</title>
     <meta charset="UTF-8">
-    <title>文章摘要</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .summary {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            white-space: pre-line;
+        }
+        .back-link {
+            margin-top: 20px;
+        }
+        .original-link {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>文章摘要</h1>
-    <p>{{ summary }}</p>
+    <h1>文章彙整結果</h1>
+    
+    <div class="original-link">
+        <a href="{{ original_url }}" target="_blank">查看原文</a>
+    </div>
+    
+    <div class="summary">
+        {{ summary }}
+    </div>
+    
+    <div class="back-link">
+        <a href="/">返回首頁</a>
+    </div>
 </body>
 </html>
